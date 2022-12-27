@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zones</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <style>
+        body {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            background-color: #0c0c0c;
+        }
+        :root{
+   --main-color:#0c0c0c;
+   --sub-color:#DCC69C;
+   --white:#fff;
+   --border:.1rem solid rgba(220, 198, 156, .3);
+}
+
+        a {
+            color: white;
+        }
+        .btn{
+   display: inline-block;
+   cursor: pointer;
+   padding: 1rem 3rem;
+   border: var(--border);
+   font-size: 1.8rem;
+   color: var(--sub-color);
+   text-align: center;
+   text-transform: capitalize;
+   transition: .2s linear;
+   margin-top: 1rem;
+   background-color: var(--main-color);
+}
+
+.btn:hover{
+   border-radius: 5rem;
+   background-color: var(--sub-color);
+   color: var(--main-color);
+}
+
+    </style>
+</head>
+
+
+<body>
+    <div class="m-4 container">
+        <center>
+        <h1><u><font color="white">FLIGHT SEAT DETAILS</u></h1></font>
+    </center>
+    </div>
+    <div class="m-4 container">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col"><font color="white">S.No</th></font>
+                    <th scope="col"><font color="white">Username</th></font>
+                    <th scope="col"><font color="white">Depart</th></font>
+                    <th scope="col"><font color="white">Return</th></font>
+                    <th scope="col"><font color="white">Start</th></font>
+                    <th scope="col"><font color="white">Destination</th></font>
+                    <th scope="col"><font color="white">Selectseat</th></font>
+                </tr>
+            </thead>
+            <tbody>
+
+                <font color="white"> {%- for row in rows %}</font>
+                <tr>
+                    <th scope="row"><font color="white">{{loop.index}}</th></font>
+                    <!-- <td><font color="white">{{row[0]}}</td></font> -->
+                    <td><font color="white">{{row[1]}}</td></font>
+                    <td><font color="white">{{row[2]}}</td></font>
+                    <td><font color="white">{{row[3]}}</td></font>
+                    <td><font color="white">{{row[4]}}</td></font>
+                    <td><font color="white">{{row[5]}}</td></font>
+                    <td><font color="white">{{row[6]}}</td></font>
+                </tr>
+                <font color="white">{%- endfor %}</font>
+            </tbody>
+        </table>
+    </div>
+    <div class="m-3 float-right">
+        <button type="button" class="btn btn-danger"><a href="{{url_for('logout')}}"><font color="white">Logout</font></a></button>
+    </div>
+
+</body>
+
+</html>
